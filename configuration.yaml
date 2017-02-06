@@ -70,9 +70,7 @@ automation:
       entity_id: image_processing.microsoftface_webcam
       name: 'Glenn'
   action:
-    service: homeassistant.turn_on
-    entity_id: script.welcoming
-
+    service: script.welcoming
 
 # Example configuration.yaml entry
 logger:
