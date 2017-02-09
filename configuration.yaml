@@ -60,7 +60,14 @@ sensor: !include_dir_merge_list includes/sensors
 light: !include_dir_merge_list includes/light
 script: !include_dir_merge_named scripts/
 
-# Example configuration.yaml automation entry
+# Example configuration.yaml entry
+logger:
+  default: warning
+  logs:
+    homeassistant.components.device_tracker.mqtt: debug
+
+
+# All facial detection is below
 automation:
 - alias: Known person in front of my door
   trigger:
@@ -71,12 +78,6 @@ automation:
       name: 'Glenn'
   action:
     service: script.welcoming
-
-# Example configuration.yaml entry
-logger:
-  default: warning
-  logs:
-    homeassistant.components.device_tracker.mqtt: debug
 
 microsoft_face:
   api_key: !secret microsoft_face_key
