@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "glenn/sensornode1/sensorstate"
+name: "SN1 PIR"
+value_template: '{{ value_json.motion }}'

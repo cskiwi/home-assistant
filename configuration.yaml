@@ -11,11 +11,14 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Brussels
   temperature_unit: C
+  customize: !include customize.yaml
+  
 
 # Enables the frontend
 frontend:
 
 http:
+  api_password: !secret password
   # Uncomment this to add a password (recommended!)
   # api_password: PASSWORD
   # Uncomment this if you are using SSL or running in Docker etc
@@ -25,7 +28,7 @@ http:
 updater:
 
 # Discover some devices automatically
-discovery:
+# discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -43,47 +46,38 @@ sun:
 tts:
   platform: google
 
-camera:
-  - platform: mjpeg
-    mjpeg_url: http://192.168.0.192:8081
-    name: Webcam
+# camera:
+#   - platform: mjpeg
+#     mjpeg_url: http://192.168.0.192:8081
+#     name: Webcam
+
+# camera:
+#     - platform: generic
+#       still_image_url: http://api.sat24.com/animated/EU/visual/1/Central%20European%20Standard%20Time/9561397
+#       name: Europe
 
 mqtt:
-    broker: 192.168.0.192
+    broker: 0.0.0.0
     port: 1883
     client_id: home-assistant-1
     keepalive: 60
     username: !secret mqtt_username
     password: !secret mqtt_password
 
-sensor: !include_dir_merge_list includes/sensors
-light: !include_dir_merge_list includes/light
-script: !include_dir_merge_named scripts/
+config:
 
-# Example configuration.yaml entry
+device_tracker: !include includes/device_trackers.yaml
+media_player: !include includes/media_players.yaml
+zone: !include_dir_merge_list includes/zones
+sensor: !include_dir_list  includes/sensor
+light: !include_dir_list includes/lights
+group: !include_dir_named includes/groups
+scene: !include_dir_list includes/scenes
+automation: !include_dir_list includes/automation
+camera: !include_dir_list includes/cameras
+script: !include_dir_named scripts/
+
 logger:
   default: warning
   logs:
     homeassistant.components.device_tracker.mqtt: debug
-
-
-# All facial detection is below
-automation:
-- alias: Known person in front of my door
-  trigger:
-    platform: event
-    event_type: identify_face
-    event_data:
-      entity_id: image_processing.microsoftface_webcam
-      name: 'Glenn'
-  action:
-    service: script.welcoming
-
-microsoft_face:
-  api_key: !secret microsoft_face_key
-
-image_processing:
- - platform: microsoft_face_identify
-   group: family
-   source:
-    - entity_id: camera.webcam

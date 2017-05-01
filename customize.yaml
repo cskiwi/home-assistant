@@ -1,0 +1,12 @@
+sensor.dark_sky_humidity:
+  icon: mdi:water-percent
+  friendly_name: Humidity
+sensor.dark_sky_temperature:
+  icon: mdi:thermometer
+  friendly_name: Temperature
+sensor.dark_sky_summary:
+  friendly_name: Today
+sensor.dark_sky_daily_summary:
+  friendly_name: " "
+group.weather_outside:
+  friendly_name: "Weather outside"

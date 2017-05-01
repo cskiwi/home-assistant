@@ -1,0 +1,11 @@
+name: DEFAULT
+icon: mdi:home
+view: yes
+entities:
+  - camera.europe
+  - group.weather_outside
+  - group.info_jarvis
+  - media_player.spotify
+  - device_tracker.phone_glenn
+  - configurator.philips_hue
+

@@ -1,0 +1,7 @@
+platform: google_travel_time
+name: Glenn Work Travel
+api_key: !secret google_key
+origin: Home
+destination: Work
+options:
+  mode: driving

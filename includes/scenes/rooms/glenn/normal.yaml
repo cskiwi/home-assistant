@@ -1,0 +1,6 @@
+name: Room Glenn normal
+entities:
+  light.glenn: 
+    state: on
+    brightness: 255
+    color_temp: 230

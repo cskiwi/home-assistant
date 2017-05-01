@@ -1,0 +1,6 @@
+name: Room Glenn off
+entities:
+  light.glenn: 
+      state: off
+  light.glenn_2: 
+      state: off

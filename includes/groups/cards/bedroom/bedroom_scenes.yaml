@@ -1,0 +1,5 @@
+name: Scenes
+entities:
+  - scene.room_glenn_normal
+  - scene.room_glenn_chill
+  - scene.room_glenn_off

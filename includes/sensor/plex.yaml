@@ -1,6 +1,6 @@
-- platform: plex
-  name: Plex Activity
-  host: 192.168.0.198
-  port: 32400
-  username: !secret plex_user
-  password: !secret plex_password
+platform: plex
+name: Plex Activity
+host: 192.168.0.198
+port: 32400
+username: !secret plex_user
+password: !secret plex_password

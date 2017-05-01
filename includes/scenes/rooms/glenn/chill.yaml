@@ -1,0 +1,6 @@
+name: Room Glenn Chill
+entities:
+  light.glenn: 
+    state: on
+    brightness: 5
+    color_temp: 450

@@ -1,0 +1,7 @@
+platform: google_travel_time
+name: Glenn Location To Home
+api_key: !secret google_key
+origin: device_tracker.phone_glenn
+destination: Home
+options:
+  mode: driving

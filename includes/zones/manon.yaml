@@ -1,0 +1,5 @@
+- name: Manon
+  latitude: !secret manon_latitude
+  longitude: !secret manon_longitude
+  radius: 50
+  icon: mdi:cat

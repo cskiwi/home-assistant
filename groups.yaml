@@ -1,0 +1,6 @@
+default_view:
+  entities:
+  - group.weather
+  - camera.europe
+  name: DEFAULT
+  view: true

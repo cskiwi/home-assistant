@@ -1,0 +1,5 @@
+name: Lights
+entities:
+  - light.bureau
+  - light.links
+  - light.midden

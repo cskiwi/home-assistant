@@ -1,0 +1,8 @@
+name: Testing
+icon: mdi:test-tube
+view: yes
+
+entities:
+  - script.jarvis_greeting
+  - script.welcome
+  - media_player.glennchromecast

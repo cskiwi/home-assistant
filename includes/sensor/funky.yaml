@@ -1,0 +1,19 @@
+platform: template
+sensors:
+  welcome:
+    friendly_name: " "
+    icon_template: '{{states.sensor.dark_sky_summary.state.entity_picture}}'
+    value_template: >
+        {% if now().strftime("%H")|int < 12 %}
+          Good morning.
+        {% elif now().strftime("%H")|int < 18 %}
+          Good afternoon.
+        {% else %}
+          Good evening.
+        {% endif %}
+          It's currently {{states.sensor.dark_sky_summary.state}} and {{states.sensor.dark_sky_temperature.state|round}} degrees. Today will be {{states.sensor.dark_sky_hourly_summary.state|replace(".", "")}}, with a high of {{states.sensor.dark_sky_daily_high_temperature.state|round}} degrees. 
+        {% if now().strftime("%H")|int < 9 and now().strftime("%w")|int > 0and now().strftime("%w")|int < 6 %}
+          The current drive to your work in traffic is {{states.sensor.glenn_work_travel.attributes.duration_in_traffic}}
+        {% endif %}
+      
+  

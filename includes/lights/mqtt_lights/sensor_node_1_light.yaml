@@ -1,0 +1,12 @@
+platform: mqtt_json  
+name: "SN1 LED"  
+state_topic: "glenn/sensornode1/sensorstate"  
+command_topic: "glenn/sensornode1/set"  
+brightness: true  
+flash: true  
+rgb: true  
+optimistic: false  
+qos: 0 
+
+
+#  mosquitto_pub -d -t 'glenn/sensornode1/sensorstate' -m '{"state":"ON", "color":{"r":255, "g":0, "b":0}, "brightness":255, "humidity":"39.5", "motion":"standby", "ldr": "36", "temperature":"86.90"}'

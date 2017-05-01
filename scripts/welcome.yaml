@@ -1,21 +1,20 @@
-welcoming:
-  alias: Welcome Glenn
-  sequence:
-    # This is Home Assistant Script Syntax
-    - alias: Saving snapshot Sonos
-      service: media_player.sonos_snapshot
-      data:
-        entity_id: media_player.family_room
-    - alias: Saying hello
-      service: tts.google_say
-      data:
-        entity_id: media_player.family_room
-        language: nl
-        message: Hallo Glenn
-    - delay:
-        # supports seconds, milliseconds, minutes, hours
-        seconds: 1
-    - alias: Restoring Sonos
-      service: media_player.sonos_restore
-      data:
-        entity_id: media_player.family_room
+alias: Welcome Glenn
+sequence:
+  # This is Home Assistant Script Syntax
+  - alias: Saving snapshot Sonos
+    service: media_player.sonos_snapshot
+    data:
+      entity_id: media_player.family_room
+  - alias: Saying hello
+    service: tts.google_say
+    data:
+      entity_id: media_player.family_room
+      language: nl
+      message: Hallo Glenn
+  - delay:
+      # supports seconds, milliseconds, minutes, hours
+      seconds: 1
+  - alias: Restoring Sonos
+    service: media_player.sonos_restore
+    data:
+      entity_id: media_player.family_room

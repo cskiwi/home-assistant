@@ -1,0 +1,4 @@
+control: hidden
+entities:
+  - light.glenn
+  - light.glenn_2

@@ -1,0 +1,6 @@
+control: hidden
+entities:
+  - light.bureau
+  - light.links
+  - light.midden
+  - light.wit

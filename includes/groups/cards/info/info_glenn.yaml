@@ -1,0 +1,6 @@
+name: Info Glenn
+entities:
+  - sensor.glenn_home_travel
+  - sensor.glenn_work_travel
+  - sensor.glenn_location_to_home
+  - camera.glenn

@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "glenn/sensornode1/sensorstate"
+name: "SN1 LDR"
+unit_of_measurement: "LUX"
+value_template: '{{ value_json.ldr }}'

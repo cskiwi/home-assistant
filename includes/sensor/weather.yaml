@@ -1,0 +1,14 @@
+#Forecast.io weather sensors
+platform: darksky
+api_key: !secret darksky_key
+forecast: 1
+monitored_conditions:
+  - summary
+  - daily_summary
+  - hourly_summary
+  - precip_type
+  - precip_probability
+  - temperature
+  - humidity
+  - temperature_max
+  - temperature_min
